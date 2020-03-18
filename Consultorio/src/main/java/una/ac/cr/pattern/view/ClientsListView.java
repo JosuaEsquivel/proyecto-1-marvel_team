@@ -58,7 +58,7 @@ public class ClientsListView extends JFrame {
         Clean.setName("btnClean");
         Cancel.setName("btnCancel");
 
-        controller = new ClientController(txtName,txtPhone,txtAddress,txtAssociatedDiseases,txtObservations);
+        controller = new ClientController(txtName,txtPhone,txtAddress,txtAssociatedDiseases,txtObservations, Add, Clean, Cancel);
         Add.addActionListener(controller);
         Clean.addActionListener(controller);
         Cancel.addActionListener(controller);
@@ -79,7 +79,6 @@ public class ClientsListView extends JFrame {
         this.add(panel);
 
         this.pack();
-        setVisible(true);
     }
 
     private void setLookAndFeel() {
