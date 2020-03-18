@@ -1,27 +1,30 @@
 package una.ac.cr.pattern.view;
 
+import una.ac.cr.pattern.controller.ClientController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ClientsListView extends JFrame implements ActionListener {
+public class ClientsListView extends JFrame {
 
     private JLabel lblName, lblPhone, lblAddress, lblAssociatedDiseases, lblObservations;
     private JTextField txtName, txtPhone, txtAddress, txtAssociatedDiseases, txtObservations;
-    private JButton btnAdd, btnClean, btnCancel;
+    private JButton Add, Clean, Cancel;
     private JPanel panel;
+    ClientController controller;
 
 
     public ClientsListView() {
         super("Client list");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(350,90);
 
         this.setLookAndFeel();
-        FlowLayout flow = new FlowLayout();
-        this.setLayout(flow);
 
         panel = new JPanel();
+        FlowLayout flow = new FlowLayout();
+        panel.setLayout(flow);
+        this.setSize(300,400);
 
         lblName = new JLabel("Name: ");
         lblPhone = new JLabel("Phone: ");
@@ -35,13 +38,9 @@ public class ClientsListView extends JFrame implements ActionListener {
         txtAssociatedDiseases = new JTextField(12);
         txtObservations = new JTextField(12);
 
-        btnAdd = new JButton(" Add ");
-        btnClean = new JButton(" Clean ");
-        btnCancel = new JButton(" Cancel ");
-
-        btnAdd.addActionListener(this);
-        btnClean.addActionListener(this);
-        btnCancel.addActionListener(this);
+        Add = new JButton(" Add ");
+        Clean = new JButton(" Clean ");
+        Cancel = new JButton(" Cancel ");
 
         txtName.setName("txtName");
         txtPhone.setName("txtPhone");
@@ -55,9 +54,14 @@ public class ClientsListView extends JFrame implements ActionListener {
         lblAssociatedDiseases.setName("lblAssociatedDiseases");
         lblObservations.setName("lblObservations");
 
-        btnAdd.setName("btnName");
-        btnClean.setName("btnClean");
-        btnCancel.setName("btnCancel");
+        Add.setName("btnName");
+        Clean.setName("btnClean");
+        Cancel.setName("btnCancel");
+
+        controller = new ClientController(txtName,txtPhone,txtAddress,txtAssociatedDiseases,txtObservations);
+        Add.addActionListener(controller);
+        Clean.addActionListener(controller);
+        Cancel.addActionListener(controller);
 
         panel.add(lblName);
         panel.add(txtName);
@@ -69,30 +73,13 @@ public class ClientsListView extends JFrame implements ActionListener {
         panel.add(txtAssociatedDiseases);
         panel.add(lblObservations);
         panel.add(txtObservations);
-        panel.add(btnAdd);
-        panel.add(btnClean);
-        panel.add(btnCancel);
+        panel.add(Add);
+        panel.add(Clean);
+        panel.add(Cancel);
         this.add(panel);
 
         this.pack();
         setVisible(true);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent actionEvent) {
-        Object source = actionEvent.getSource();
-        if (source == btnAdd){
-
-        } else if (source == btnClean){
-            txtName.setText(" ");
-            txtPhone.setText(" ");
-            txtAddress.setText(" ");
-            txtAssociatedDiseases.setText(" ");
-            txtObservations.setText(" ");
-        } else if (source == btnCancel){
-
-        }
-        repaint();
     }
 
     private void setLookAndFeel() {
