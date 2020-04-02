@@ -1,9 +1,7 @@
 package una.ac.cr.pattern.view;
 
 import una.ac.cr.pattern.controller.LoginController;
-import una.ac.cr.pattern.model.CustomerRegistration;
 
-import javax.imageio.stream.ImageInputStream;
 import javax.swing.*;
 import java.awt.*;
 
