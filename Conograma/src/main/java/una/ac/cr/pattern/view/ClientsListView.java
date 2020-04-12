@@ -4,7 +4,11 @@ import una.ac.cr.pattern.controller.ClientController;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+
+/**
+ * Descripcion: Clase que agrega y almacena en Json la informacion general
+ *                de los clientes.
+ */
 
 public class ClientsListView extends JFrame {
 
@@ -16,15 +20,15 @@ public class ClientsListView extends JFrame {
 
 
     public ClientsListView() {
-        super("Client list");
+        this.setTitle("Medical Control");
+        this.setSize(900, 600);
+        this.setResizable(false);
+        this.setLocationRelativeTo(this);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        this.setLookAndFeel();
 
         panel = new JPanel();
         FlowLayout flow = new FlowLayout();
         panel.setLayout(flow);
-        this.setSize(300,400);
 
         lblName = new JLabel("Name: ");
         lblPhone = new JLabel("Phone: ");
@@ -78,22 +82,10 @@ public class ClientsListView extends JFrame {
         panel.add(Cancel);
         this.add(panel);
 
-        this.pack();
+        this.setVisible(true);
     }
 
-    private void setLookAndFeel() {
-        try {
-            UIManager.setLookAndFeel(
-                    "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
-            );
-            SwingUtilities.updateComponentTreeUI(this);
-        } catch (Exception exc) {
-            System.err.println("Couldn't use the system "
-                    + "look and feel: " + exc);
-        }
-    }
-
-    public static void main(String[] args) {
+       public static void main(String[] args) {
         new ClientsListView();
     }
 }

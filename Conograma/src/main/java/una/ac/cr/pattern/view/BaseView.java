@@ -1,5 +1,9 @@
 package una.ac.cr.pattern.view;
 
+/**
+ * Descripcion: Clase que maneja cual clase sea visible o cual no.
+ */
+
 public class BaseView {
     private ClientsListView clientsList;
     private DatingManagerView datingManager;

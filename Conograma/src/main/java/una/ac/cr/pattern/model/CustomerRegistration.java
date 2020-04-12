@@ -3,6 +3,8 @@ package una.ac.cr.pattern.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CustomerRegistration extends Registration {
+    @JsonProperty("id")
+    private Id id;
     @JsonProperty("day")
     private int day;
     @JsonProperty("month")
@@ -14,14 +16,24 @@ public class CustomerRegistration extends Registration {
     @JsonProperty("observations")
     private String observations;
 
-
-    public CustomerRegistration(String name, int phone, String address, int day, int month, int year, String associatedDiseases, String observations) {
+    public CustomerRegistration(String name, int phone, String address, Id id,
+                                int day, int month, int year, String associatedDiseases,
+                                String observations) {
         super(name, phone, address);
+        this.id = id;
         this.day = day;
         this.month = month;
         this.year = year;
         this.associatedDiseases = associatedDiseases;
         this.observations = observations;
+    }
+
+    public Id getId() {
+        return id;
+    }
+
+    public void setId(Id id) {
+        this.id = id;
     }
 
     public int getDay() {

@@ -5,6 +5,11 @@ import una.ac.cr.pattern.controller.LoginController;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Descripcion: Clase encargada de hacer el loggeo y la autentificacion
+ *                del doctor.
+ */
+
 public class LoginView extends JFrame {
 
     JTextField user;
