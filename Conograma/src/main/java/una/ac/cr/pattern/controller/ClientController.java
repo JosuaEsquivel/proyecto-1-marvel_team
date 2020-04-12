@@ -10,10 +10,10 @@ public class ClientController implements ActionListener {
     private JTextField txtPhone = new JTextField(12);
     private JTextField txtAddress = new JTextField(12);
     private JTextField txtAssociatedDiseases = new JTextField(12);
-    private JTextField txtObservations = new JTextField(12);
-    private JButton btnAdd, btnClean, btnCancel;
+    private JTextArea txtObservations = new JTextArea(4,15);
+    private JButton btnAdd, btnClean;
 
-    public ClientController(JTextField txtName, JTextField txtPhone, JTextField txtAddress, JTextField txtAssociatedDiseases, JTextField txtObservations, JButton btnAdd, JButton btnClean, JButton btnCancel) {
+    public ClientController(JTextField txtName, JTextField txtPhone, JTextField txtAddress, JTextField txtAssociatedDiseases, JTextArea txtObservations, JButton btnAdd, JButton btnClean) {
         super();
         this.txtName = txtName;
         this.txtPhone = txtPhone;
@@ -22,7 +22,6 @@ public class ClientController implements ActionListener {
         this.txtObservations = txtObservations;
         this.btnAdd = btnAdd;
         this.btnClean = btnClean;
-        this.btnCancel = btnCancel;
     }
 
     @Override
@@ -35,7 +34,6 @@ public class ClientController implements ActionListener {
             txtAddress.setText(" ");
             txtAssociatedDiseases.setText(" ");
             txtObservations.setText(" ");
-        } else if (source == btnCancel) {
         }
     }
 }

@@ -12,43 +12,67 @@ import java.awt.*;
 
 public class LoginView extends JFrame {
 
-    JTextField user;
-    JPasswordField password;
-    JButton btnAccept;
-    LoginController controller;
-    JPanel panel;
+    private JLabel lblUser, lblPassword,lblLogIn;
+    private JTextField txtUser;
+    private JPasswordField password;
+    private JButton btnAccept, btnClean;
+    private LoginController controller;
+    private JPanel panel;
 
     public LoginView() {
-        super("Login");
+        this.setTitle("Log In");
+        this.setSize(250, 200);
+        this.setResizable(false);
+        this.setLocationRelativeTo(this);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        FlowLayout flow = new FlowLayout();
-        setLayout(flow);
-
-        user = new JTextField(12);
-        password = new JPasswordField(12);
-        btnAccept = new JButton("Accept");
         panel = new JPanel();
+        lblLogIn = new JLabel("            Medical Control              ");
+        lblUser = new JLabel("     Name:            ");
+        lblPassword = new JLabel("    Password:     ");
+        txtUser = new JTextField(14);
+        password = new JPasswordField(14);
+        btnAccept = new JButton(" Accept ");
+        btnClean = new JButton(" Clean ");
 
-        user.setName("txtUser");
+        lblUser.setName("lblName");
+        lblPassword.setName("lblPassword");
+        txtUser.setName("txtUser");
         password.setName("txtPassword");
         btnAccept.setName("btnAccept");
+        btnClean.setName("btnClean");
+        panel.setName("form");
 
-        controller = new LoginController(user, password, btnAccept);
+        panel.setBackground(Color.lightGray);
+
+        controller = new LoginController(txtUser, password, btnAccept, btnClean);
         btnAccept.addActionListener(controller);
+        btnClean.addActionListener(controller);
 
-        panel.add(user);
+        panel.add(lblLogIn);
+        panel.add(lblUser);
+        panel.add(txtUser);
+        panel.add(lblPassword);
         panel.add(password);
+        panel.add(btnClean);
         panel.add(btnAccept);
-
         this.add(panel);
-
-        pack();
 
         this.setVisible(true);
     }
 
+    private static void setLookAndFeel() {
+        try {
+            UIManager.setLookAndFeel(
+                    "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
+            );
+        } catch (Exception exc) {
+            System.out.println(exc.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
-        new LoginView();
+        LoginView.setLookAndFeel();
+        LoginView loginView = new LoginView();
     }
 }

@@ -7,65 +7,61 @@ import java.awt.*;
 
 /**
  * Descripcion: Clase que agrega y almacena en Json la informacion general
- *                de los clientes.
+ * de los clientes.
  */
 
 public class ClientsListView extends JFrame {
 
     private JLabel lblName, lblPhone, lblAddress, lblAssociatedDiseases, lblObservations;
-    private JTextField txtName, txtPhone, txtAddress, txtAssociatedDiseases, txtObservations;
-    private JButton Add, Clean, Cancel;
+    private JTextField txtName, txtPhone, txtAddress, txtAssociatedDiseases;
+    private JTextArea txtObservations;
+    private JButton Add, Clean;
     private JPanel panel;
     ClientController controller;
 
 
     public ClientsListView() {
-        this.setTitle("Medical Control");
-        this.setSize(900, 600);
+        this.setTitle("Sing in");
+        this.setSize(255, 355);
         this.setResizable(false);
         this.setLocationRelativeTo(this);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        panel = new JPanel();
-        FlowLayout flow = new FlowLayout();
-        panel.setLayout(flow);
-
-        lblName = new JLabel("Name: ");
-        lblPhone = new JLabel("Phone: ");
-        lblAddress = new JLabel("Address: ");
-        lblAssociatedDiseases = new JLabel("Associated Diseases: ");
-        lblObservations = new JLabel("Observations: ");
-
-        txtName = new JTextField(12);
-        txtPhone = new JTextField(12);
-        txtAddress = new JTextField(12);
-        txtAssociatedDiseases = new JTextField(12);
-        txtObservations = new JTextField(12);
-
-        Add = new JButton(" Add ");
+        lblName = new JLabel("  Name:           ");
+        lblPhone = new JLabel("  Phone:          ");
+        lblAddress = new JLabel("  Address:       ");
+        lblAssociatedDiseases = new JLabel("  Associated Diseases:   ");
+        lblObservations = new JLabel("  Observations:   ");
+        txtName = new JTextField(14);
+        txtPhone = new JTextField(14);
+        txtAddress = new JTextField(17);
+        txtAssociatedDiseases = new JTextField(17);
+        txtObservations = new JTextArea(4, 16);
+        Add = new JButton(" Accept ");
         Clean = new JButton(" Clean ");
-        Cancel = new JButton(" Cancel ");
+        panel = new JPanel();
 
         txtName.setName("txtName");
         txtPhone.setName("txtPhone");
         txtAddress.setName("txtAddress");
         txtAssociatedDiseases.setName("txtAssociatedDiseases");
         txtObservations.setName("txtObservations");
-
         lblName.setName("lblName");
         lblPhone.setName("lblPhone");
         lblAddress.setName("lblAddress");
         lblAssociatedDiseases.setName("lblAssociatedDiseases");
         lblObservations.setName("lblObservations");
-
         Add.setName("btnName");
         Clean.setName("btnClean");
-        Cancel.setName("btnCancel");
 
-        controller = new ClientController(txtName,txtPhone,txtAddress,txtAssociatedDiseases,txtObservations, Add, Clean, Cancel);
+        panel.setBackground(Color.lightGray);
+
+        controller = new ClientController(txtName, txtPhone, txtAddress, txtAssociatedDiseases, txtObservations, Add, Clean);
         Add.addActionListener(controller);
         Clean.addActionListener(controller);
-        Cancel.addActionListener(controller);
+
+        txtObservations.setLineWrap(true);
+        txtObservations.setWrapStyleWord(true);
 
         panel.add(lblName);
         panel.add(txtName);
@@ -77,15 +73,25 @@ public class ClientsListView extends JFrame {
         panel.add(txtAssociatedDiseases);
         panel.add(lblObservations);
         panel.add(txtObservations);
-        panel.add(Add);
         panel.add(Clean);
-        panel.add(Cancel);
+        panel.add(Add);
         this.add(panel);
 
         this.setVisible(true);
     }
 
-       public static void main(String[] args) {
-        new ClientsListView();
+    private static void setLookAndFeel() {
+        try {
+            UIManager.setLookAndFeel(
+                    "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
+            );
+        } catch (Exception exc) {
+            System.out.println(exc.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        ClientsListView.setLookAndFeel();
+        ClientsListView clientsListView = new ClientsListView();
     }
 }
