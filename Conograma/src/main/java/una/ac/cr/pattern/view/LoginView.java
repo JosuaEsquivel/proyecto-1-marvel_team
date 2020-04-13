@@ -12,12 +12,12 @@ import java.awt.*;
 
 public class LoginView extends JFrame {
 
+    private JPanel panel;
     private JLabel lblUser, lblPassword,lblLogIn;
     private JTextField txtUser;
     private JPasswordField password;
     private JButton btnAccept, btnClean;
     private LoginController controller;
-    private JPanel panel;
 
     public LoginView() {
         this.setTitle("Log In");
