@@ -5,6 +5,9 @@ import org.w3c.dom.ls.LSOutput;
 
 import javax.swing.*;
 import una.ac.cr.pattern.Constants;
+import una.ac.cr.pattern.controller.ClientController;
+import una.ac.cr.pattern.controller.MedicalClinicController;
+
 import java.awt.*;
 
 /**
@@ -15,8 +18,10 @@ import java.awt.*;
 
 public class MedicalClinicView extends JFrame {
 
+    private JPanel panel;
     private JButton logIn, singIn;
     private ImageIcon imageClient, imageDoctor;
+    MedicalClinicController controller;
 
     public MedicalClinicView() {
         this.setTitle("Medical Control");
@@ -24,11 +29,43 @@ public class MedicalClinicView extends JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(this);
         this.setVisible(true);
+
+        panel = new JPanel();
+        singIn = new JButton("Client");
+        logIn = new JButton("Doctor");
+        imageClient = new ImageIcon(Constants.IMAGECLIENTS);
+        imageDoctor = new ImageIcon(Constants.IMAGEDOCTOR);
+
+        singIn.setIcon(new ImageIcon(imageClient.getImage().getScaledInstance(106,70, Image.SCALE_SMOOTH)));
+        logIn.setIcon(new ImageIcon(imageDoctor.getImage().getScaledInstance(100,70, Image.SCALE_SMOOTH)));
+
+        singIn.setBackground(Color.lightGray);
+        logIn.setBackground(Color.lightGray);
+
+        controller = new MedicalClinicController(singIn, logIn);
+        singIn.addActionListener(controller);
+        logIn.addActionListener(controller);
+
+        panel.add(singIn);
+        panel.add(logIn);
+        this.add(panel);
+
+        setVisible(true);
     }
 
+    private static void setLookAndFeel() {
+        try {
+            UIManager.setLookAndFeel(
+                    "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
+            );
+        } catch (Exception exc) {
+            System.out.println(exc.getMessage());
+        }
+    }
 
     public static void main(String[] args) {
-        new MedicalClinicView();
+        MedicalClinicView.setLookAndFeel();
+        MedicalClinicView medicalClinicView = new MedicalClinicView();
     }
 
 }

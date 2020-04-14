@@ -24,21 +24,16 @@ public class ClientService {
      * @throws com.fasterxml.jackson.databind.JsonMappingException
      * @throws java.io.IOException
      */
-    public Object[][] loadStudentsObjWrapper() throws JsonGenerationException,
+    public Object[][] loadClientObjWrapper() throws JsonGenerationException,
             JsonMappingException, IOException {
-        CustomerRegistration[] custom = loadStudentsFromFile();
+        CustomerRegistration[] custom = loadClientFromFile();
         Object[][] data = null;
 
         if (custom != null && custom.length > 0) {
-            data = new Object[custom.length][9]; // filas y columnas
+            data = new Object[custom.length][4]; // filas y columnas
             int i = 0;
             for (CustomerRegistration customerRegistration : custom) {
-                data[i][0] = checkIfNull(customerRegistration.getId().get$oid());
-                data[i][1] = checkIfNull(customerRegistration.getName());
-                data[i][2] = checkIfNull(customerRegistration.getPhone());
-                data[i][3] = checkIfNull(customerRegistration.getAddress());
-                data[i][4] = checkIfNull(customerRegistration.getDay());
-                data[i][5] = checkIfNull(customerRegistration.getMonth());
+                data[i][0] = checkIfNull(customerRegistration.getId().get$oid());;
                 data[i][6] = checkIfNull(customerRegistration.getYear());
                 data[i][7] = checkIfNull(customerRegistration.getAssociatedDiseases());
                 data[i][8] = checkIfNull(customerRegistration.getObservations());
@@ -49,7 +44,7 @@ public class ClientService {
         return data;
     }
 
-    private CustomerRegistration[] loadStudentsFromFile() throws JsonGenerationException,
+    private CustomerRegistration[] loadClientFromFile() throws JsonGenerationException,
             JsonMappingException, IOException {
         // Library Jackson parse JSon
         // http://wiki.fasterxml.com/JacksonHome
