@@ -7,13 +7,13 @@ import java.awt.*;
 
 /**
  * Descripcion: Clase encargada de hacer el loggeo y la autentificacion
- *                del doctor.
+ * del doctor.
  */
 
 public class LoginView extends JFrame {
 
     private JPanel panel;
-    private JLabel lblUser, lblPassword,lblLogIn;
+    private JLabel lblUser, lblPassword, lblLogIn;
     private JTextField txtUser;
     private JPasswordField password;
     private JButton btnAccept, btnClean;

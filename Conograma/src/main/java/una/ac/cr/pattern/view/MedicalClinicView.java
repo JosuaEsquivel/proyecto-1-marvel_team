@@ -22,6 +22,7 @@ public class MedicalClinicView extends JFrame {
     private JButton logIn, singIn;
     private ImageIcon imageClient, imageDoctor;
     MedicalClinicController controller;
+    Icon icoClient, icoDoctor;
 
     public MedicalClinicView() {
         this.setTitle("Medical Control");
@@ -31,13 +32,15 @@ public class MedicalClinicView extends JFrame {
         this.setVisible(true);
 
         panel = new JPanel();
+        icoClient = new ImageIcon(getClass().getResource("/icons/Client.png"));
+        //icoDoctor = new ImageIcon(getClass().getResource("/icons/Doctor.png"));
         singIn = new JButton("Client");
         logIn = new JButton("Doctor");
         imageClient = new ImageIcon(Constants.IMAGECLIENTS);
         imageDoctor = new ImageIcon(Constants.IMAGEDOCTOR);
 
-        singIn.setIcon(new ImageIcon(imageClient.getImage().getScaledInstance(106,70, Image.SCALE_SMOOTH)));
-        logIn.setIcon(new ImageIcon(imageDoctor.getImage().getScaledInstance(100,70, Image.SCALE_SMOOTH)));
+        //singIn.setIcon(new ImageIcon(imageClient.getImage().getScaledInstance(106,70, Image.SCALE_SMOOTH)));
+        //logIn.setIcon(new ImageIcon(imageDoctor.getImage().getScaledInstance(100,70, Image.SCALE_SMOOTH)));
 
         singIn.setBackground(Color.lightGray);
         logIn.setBackground(Color.lightGray);

@@ -3,7 +3,6 @@ package una.ac.cr.pattern.controller;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import una.ac.cr.pattern.Constants;
-import una.ac.cr.pattern.model.CustomerRegistration;
 import una.ac.cr.pattern.services.ClientService;
 
 import javax.swing.*;

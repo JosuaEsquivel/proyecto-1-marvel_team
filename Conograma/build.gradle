@@ -17,4 +17,5 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.3'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.6.3'
     compile 'org.projectlombok:lombok:1.16.6'
+
 }

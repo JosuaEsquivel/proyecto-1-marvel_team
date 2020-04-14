@@ -34,9 +34,9 @@ public class ClientService {
             int i = 0;
             for (CustomerRegistration customerRegistration : custom) {
                 data[i][0] = checkIfNull(customerRegistration.getId().get$oid());;
-                data[i][6] = checkIfNull(customerRegistration.getYear());
-                data[i][7] = checkIfNull(customerRegistration.getAssociatedDiseases());
-                data[i][8] = checkIfNull(customerRegistration.getObservations());
+                data[i][1] = checkIfNull(customerRegistration.getYear());
+                data[i][2] = checkIfNull(customerRegistration.getAssociatedDiseases());
+                data[i][3] = checkIfNull(customerRegistration.getObservations());
                 i++;
             }
         }

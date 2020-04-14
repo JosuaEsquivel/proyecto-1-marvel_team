@@ -10,7 +10,7 @@ import java.io.IOException;
 
 /**
  * Descripcion: Clase encargada de mostrar la lista de los clientes que an reservado
- *                una cita con el doctor.
+ * una cita con el doctor.
  */
 
 public class DatingManagerView extends JFrame {
@@ -36,8 +36,8 @@ public class DatingManagerView extends JFrame {
         table.setModel(tableModel);
 
         // Create controller
-        //controller = new DatingManagerController(searchTermTextField, tableModel);
-        //filterButton.addActionListener(controller);
+        controller = new DatingManagerController(searchTermTextField, tableModel);
+        filterButton.addActionListener(controller);
 
         // Set the view layout
         JPanel ctrlPane = new JPanel();
