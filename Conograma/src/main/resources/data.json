@@ -1,13 +1,20 @@
 [{
 	"_id": {
-		"$oid": "53ff7055e4b08e25b538be03"
+		"$oid": "105330034"
 	},
-	"name": "Jorge",
-	"course": "Paradigmas de Programacion"
+	"name": "Javier",
+	"associatedDiseases": "Ninguna"
 }, {
 	"_id": {
-		"$oid": "53ff9460e4b0a8480579ee76"
+		"$oid": "A10234760034"
 	},
-	"name": "Juan",
-	"course": "Paradigmas de Programacion"
+	"name": "Alexander",
+	"associatedDiseases": "Asmatico"
+}, {
+	"_id": {
+		"$oid": "401334067"
+	},
+	"name": "Carlos",
+	"associatedDiseases": "Diabetes",
+	"observations": "Alergico a la anestesia"
 }]

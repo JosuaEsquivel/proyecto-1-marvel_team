@@ -10,7 +10,7 @@ import java.awt.*;
  * de los clientes.
  */
 
-public class ClientsListView extends JFrame {
+public class ClientsView extends JFrame {
 
     private JPanel panel;
     String[] formats = {"Hospital CYM", "Centro Medico del Este"};
@@ -22,7 +22,7 @@ public class ClientsListView extends JFrame {
     ClientController controller;
 
 
-    public ClientsListView() {
+    public ClientsView() {
         this.setTitle("Sing in");
         this.setSize(255, 400);
         this.setResizable(false);
@@ -104,7 +104,7 @@ public class ClientsListView extends JFrame {
     }
 
     public static void main(String[] args) {
-        ClientsListView.setLookAndFeel();
-        ClientsListView clientsListView = new ClientsListView();
+        ClientsView.setLookAndFeel();
+        ClientsView clientsView = new ClientsView();
     }
 }

@@ -16,6 +16,13 @@ public class CustomerRegistration extends Registration {
     @JsonProperty("observations")
     private String observations;
 
+    /**
+     *
+     * @param id
+     * @param year
+     * @param associatedDiseases
+     * @param observations
+     */
     public CustomerRegistration(String name, int phone, String address, Id id,
                                 int day, int month, int year, String associatedDiseases,
                                 String observations) {

@@ -2,6 +2,7 @@ package una.ac.cr.pattern;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import una.ac.cr.pattern.view.ClientListView;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -33,6 +34,6 @@ public class ControlExceptions {
      * @throws Exception
      */
     public static void createAndShowGUI() throws Exception {
-        ControlExceptions controlExceptions = new ControlExceptions();
+        ClientListView datingManagerView = new ClientListView();
     }
 }

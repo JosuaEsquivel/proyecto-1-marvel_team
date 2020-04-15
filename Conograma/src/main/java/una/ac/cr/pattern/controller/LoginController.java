@@ -28,8 +28,8 @@ public class LoginController implements ActionListener {
                 password.setText("");
                 JOptionPane.showMessageDialog(null, "Complete all the spaces", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                if (usuario.equals("user") && pass.equals("mc2020")){
-                    // Se loguea y aparecen las opciones del medico
+                if (usuario.equalsIgnoreCase("user") && pass.equals("mc2020")){
+                    System.exit(0);
                 }
             }
         } else if (source == btnClean) {

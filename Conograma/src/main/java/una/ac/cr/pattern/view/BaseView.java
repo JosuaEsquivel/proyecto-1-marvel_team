@@ -5,8 +5,7 @@ package una.ac.cr.pattern.view;
  */
 
 public class BaseView {
-    private ClientsListView clientsList;
-    private DatingManagerView datingManager;
+    private ClientsView clientsList;
     private MedicalClinicView medicalClinic;
 
     public void showClientsList() {
@@ -15,14 +14,6 @@ public class BaseView {
 
     public void hideClientsList() {
         clientsList.setVisible(false);
-    }
-
-    public void showdatingManager() {
-        datingManager.setVisible(true);
-    }
-
-    public void hidedatingManager() {
-        datingManager.setVisible(false);
     }
 
     public void showmedicalClinic() {
