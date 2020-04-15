@@ -13,7 +13,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  * Universidad Nacional de Costa Rica, Prof: Maikol Guzman Alan.
  */
 package una.ac.cr.pattern.services;
@@ -53,13 +53,16 @@ public class ClientService {
         Object[][] data = null;
 
         if (clients != null && clients.length > 0) {
-            data = new Object[clients.length][4]; // filas y columnas
+            data = new Object[clients.length][7]; // filas y columnas
             int i = 0;
             for (Client client : clients) {
                 data[i][0] = checkIfNull(client.getId().get$oid());
-                data[i][1] = checkIfNull(client.getName());
-                data[i][2] = checkIfNull(client.getAssociatedDiseases());
-                data[i][3] = checkIfNull(client.getObservations());
+                data[i][1] = checkIfNull(client.getDay());
+                data[i][2] = checkIfNull(client.getMonth());
+                data[i][3] = checkIfNull(client.getYear());
+                data[i][4] = checkIfNull(client.getName());
+                data[i][5] = checkIfNull(client.getAssociatedDiseases());
+                data[i][6] = checkIfNull(client.getObservations());
                 i++;
             }
         }
@@ -77,7 +80,7 @@ public class ClientService {
         // Convert JSON string from file to Object
         clients = mapper.readValue(new File(
                 getClass().getClassLoader().getResource(Constants.FILENAME).getFile()
-                ), Client[].class);
+        ), Client[].class);
 
         return clients;
     }
