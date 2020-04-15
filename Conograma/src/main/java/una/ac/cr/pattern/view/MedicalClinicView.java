@@ -42,6 +42,11 @@ public class MedicalClinicView extends JFrame {
         singIn.setBackground(Color.lightGray);
         logIn.setBackground(Color.lightGray);
 
+        singIn.setHorizontalTextPosition(SwingConstants.HORIZONTAL);
+        singIn.setVerticalTextPosition(SwingConstants.BOTTOM);
+        logIn.setHorizontalTextPosition(SwingConstants.HORIZONTAL);
+        logIn.setVerticalTextPosition(SwingConstants.BOTTOM);
+
         controller = new MedicalClinicController(singIn, logIn);
         singIn.addActionListener(controller);
         logIn.addActionListener(controller);

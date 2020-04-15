@@ -20,9 +20,20 @@ public class LoginController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         Object source = actionEvent.getSource();
+        String usuario = txtUser.getText();
+        String pass = new String(password.getPassword());
         if (source == btnAccept) {
+            if (usuario.equals("") || pass.equals("")) {
+                txtUser.setText("");
+                password.setText("");
+                JOptionPane.showMessageDialog(null, "Complete all the spaces", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (usuario.equals("user") && pass.equals("mc2020")){
+                    // Se loguea y aparecen las opciones del medico
+                }
+            }
         } else if (source == btnClean) {
-            txtUser.setText(" ");
+            txtUser.setText("");
             password.setText("");
         }
     }

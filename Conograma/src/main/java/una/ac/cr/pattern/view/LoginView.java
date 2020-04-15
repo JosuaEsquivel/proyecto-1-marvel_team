@@ -28,7 +28,7 @@ public class LoginView extends JFrame {
 
         panel = new JPanel();
         lblLogIn = new JLabel("            Medical Control              ");
-        lblUser = new JLabel("     Name:            ");
+        lblUser = new JLabel("     User:            ");
         lblPassword = new JLabel("    Password:     ");
         txtUser = new JTextField(14);
         password = new JPasswordField(14);
