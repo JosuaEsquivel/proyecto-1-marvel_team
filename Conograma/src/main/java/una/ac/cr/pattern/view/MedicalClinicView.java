@@ -1,11 +1,8 @@
 package una.ac.cr.pattern.view;
 
-import com.fasterxml.jackson.databind.util.ISO8601Utils;
-import org.w3c.dom.ls.LSOutput;
-
 import javax.swing.*;
+
 import una.ac.cr.pattern.Constants;
-import una.ac.cr.pattern.controller.ClientController;
 import una.ac.cr.pattern.controller.MedicalClinicController;
 
 import java.awt.*;

@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 public class MedicalClinicController implements ActionListener {
 
     private JButton logIn, singIn;
+    JInternalFrame logInWindow;
+
 
     public MedicalClinicController(JButton logIn, JButton singIn) {
         this.logIn = logIn;
@@ -15,6 +17,10 @@ public class MedicalClinicController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+        Object source = actionEvent.getSource();
+        if (source == logIn) {
+        } else if (source == singIn) {
+        }
 
     }
 }

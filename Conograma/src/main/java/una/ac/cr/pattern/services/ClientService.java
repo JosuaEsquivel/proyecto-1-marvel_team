@@ -27,11 +27,7 @@ import una.ac.cr.pattern.model.Client;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Service to get the data from the service
- *
- * @author mguzmana
- */
+
 public class ClientService {
 
     /**
