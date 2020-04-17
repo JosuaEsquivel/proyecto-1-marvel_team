@@ -10,7 +10,7 @@ import java.awt.*;
  * del doctor.
  */
 
-public class LoginView extends JFrame {
+public class LoginView extends JInternalFrame {
 
     private JPanel panel;
     private JLabel lblUser, lblPassword, lblLogIn;
@@ -20,11 +20,11 @@ public class LoginView extends JFrame {
     private LoginController controller;
 
     public LoginView() {
-        this.setTitle("Log In");
-        this.setSize(250, 200);
+        this.setClosable(true); // Para cerrar
+        this.setIconifiable(true); // Para minimizar
         this.setResizable(false);
-        this.setLocationRelativeTo(this);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Log In");
+        this.setSize(240, 200);
 
         panel = new JPanel();
         lblLogIn = new JLabel("            Medical Control              ");
@@ -41,13 +41,12 @@ public class LoginView extends JFrame {
         password.setName("txtPassword");
         btnAccept.setName("btnAccept");
         btnClean.setName("btnClean");
-        panel.setName("form");
-
-        panel.setBackground(Color.lightGray);
 
         controller = new LoginController(txtUser, password, btnAccept, btnClean);
         btnAccept.addActionListener(controller);
         btnClean.addActionListener(controller);
+
+        panel.setBackground(Color.orange);
 
         panel.add(lblLogIn);
         panel.add(lblUser);
@@ -56,23 +55,6 @@ public class LoginView extends JFrame {
         panel.add(password);
         panel.add(btnClean);
         panel.add(btnAccept);
-        this.add(panel);
-
-        this.setVisible(true);
-    }
-
-    private static void setLookAndFeel() {
-        try {
-            UIManager.setLookAndFeel(
-                    "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
-            );
-        } catch (Exception exc) {
-            System.out.println(exc.getMessage());
-        }
-    }
-
-    public static void main(String[] args) {
-        LoginView.setLookAndFeel();
-        LoginView loginView = new LoginView();
+        add(panel);
     }
 }

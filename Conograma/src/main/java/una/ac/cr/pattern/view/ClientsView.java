@@ -10,7 +10,7 @@ import java.awt.*;
  * de los clientes.
  */
 
-public class ClientsView extends JFrame {
+public class ClientsView extends JInternalFrame {
 
     private JPanel panel;
     String[] formats = {"Hospital CYM", "Centro Medico del Este"};
@@ -23,11 +23,12 @@ public class ClientsView extends JFrame {
 
 
     public ClientsView() {
+        this.setClosable(true); // Para cerrar
+        this.setIconifiable(true); // Para minimizar
+        this.setResizable(false);
         this.setTitle("Sing in");
         this.setSize(255, 400);
-        this.setResizable(false);
-        this.setLocationRelativeTo(this);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
         formatBox = new JComboBox();
         lblName = new JLabel("  Name:           ");
@@ -57,13 +58,13 @@ public class ClientsView extends JFrame {
         Add.setName("btnName");
         Clean.setName("btnClean");
 
-        panel.setBackground(Color.lightGray);
+        panel.setBackground(Color.yellow);
 
         for (int i = 0; i < formats.length; i++) {
             formatBox.addItem(formats[i]);
         }
 
-        controller = new ClientController(formatBox,txtName, txtPhone, txtAddress, txtAssociatedDiseases, txtObservations, Add, Clean);
+        controller = new ClientController(formatBox, txtName, txtPhone, txtAddress, txtAssociatedDiseases, txtObservations, Add, Clean);
         formatBox.addActionListener(controller);
         Add.addActionListener(controller);
         Clean.addActionListener(controller);
@@ -85,26 +86,5 @@ public class ClientsView extends JFrame {
         panel.add(Clean);
         panel.add(Add);
         this.add(panel);
-
-        this.setVisible(true);
-    }
-
-    private static void setLookAndFeel() {
-        try {
-            UIManager.setLookAndFeel(
-                    "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
-            );
-        } catch (Exception exc) {
-            System.out.println(exc.getMessage());
-        }
-    }
-
-    public Insets getInsets() {
-        return new Insets(50, 10, 10, 10);
-    }
-
-    public static void main(String[] args) {
-        ClientsView.setLookAndFeel();
-        ClientsView clientsView = new ClientsView();
     }
 }
