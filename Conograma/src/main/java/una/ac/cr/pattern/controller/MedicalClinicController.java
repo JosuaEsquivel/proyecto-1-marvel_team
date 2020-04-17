@@ -31,11 +31,11 @@ public class MedicalClinicController implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
         Object source = actionEvent.getSource();
         if (source == logIn) {
-            MedicalClinicView.desktop.add(clientsView);
-            clientsView.setVisible(true);
-        } else if (source == singIn) {
             MedicalClinicView.desktop.add(singInView);
             singInView.setVisible(true);
+        } else if (source == singIn) {
+            MedicalClinicView.desktop.add(clientsView);
+            clientsView.setVisible(true);
         }
     }
 }

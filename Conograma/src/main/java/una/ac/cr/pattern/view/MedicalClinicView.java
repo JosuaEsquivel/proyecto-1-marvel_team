@@ -29,7 +29,7 @@ public class MedicalClinicView extends JFrame {
 
     public MedicalClinicView() {
         this.setTitle("Medical Control");
-        this.setSize(750, 550);
+        this.setSize(1250, 750);
         this.setLayout(null);
         this.setLocationRelativeTo(this);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

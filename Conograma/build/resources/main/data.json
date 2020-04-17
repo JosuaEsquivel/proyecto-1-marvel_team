@@ -1,0 +1,29 @@
+[{
+	"_id": {
+		"$oid": "105330034"
+	},
+	"day": 5,
+	"month": 11,
+	"year": 2020,
+	"name": "Javier",
+	"associatedDiseases": "Ninguna"
+}, {
+	"_id": {
+		"$oid": "A10234760034"
+	},
+	"day": 8,
+	"month": 11,
+	"year": 2020,
+	"name": "Alexander",
+	"associatedDiseases": "Asmatico"
+}, {
+	"_id": {
+		"$oid": "401334067"
+	},
+	"day": 12,
+	"month": 11,
+	"year": 2020,
+	"name": "Carlos",
+	"associatedDiseases": "Diabetes",
+	"observations": "Alergico a la anestesia"
+}]
