@@ -4,13 +4,25 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import una.ac.cr.pattern.controller.ClientListController;
 
-import javax.swing.*;
+import javax.swing.JInternalFrame;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.BorderFactory;
+import javax.swing.JSplitPane;
+import javax.swing.JFrame;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+import java.awt.Dimension;
 import java.io.IOException;
 
-public class ClientListView extends JFrame {
+/**
+ * Descripcion: Clase que contiene la lista de los clientes.
+ */
+
+public class ClientListView extends JInternalFrame {
     // Create views swing UI components
 
     JTextField searchTermTextField = new JTextField(26);
@@ -19,8 +31,6 @@ public class ClientListView extends JFrame {
     DefaultTableModel tableModel = new DefaultTableModel();
 
     /**
-     * Main Constructor
-     *
      * @throws JsonGenerationException
      * @throws JsonMappingException
      * @throws IOException
@@ -28,7 +38,10 @@ public class ClientListView extends JFrame {
     public ClientListView() throws JsonGenerationException,
             JsonMappingException, IOException {
 
-        super("List of Students (MVC Demo)");
+        this.setClosable(true); // Para cerrar
+        this.setIconifiable(true); // Para minimizar
+        this.setResizable(false);
+        this.setTitle("Patient List");
 
         searchTermTextField.setName("txtSearch");
         filterButton.setName("btnFilter");
@@ -64,11 +77,6 @@ public class ClientListView extends JFrame {
         add(splitPane);
         pack();
 
-        setLocationRelativeTo(null);
-        setVisible(true);
     }
 
-    public static void main(String[] args) throws IOException {
-        new ClientListView();
-    }
 }

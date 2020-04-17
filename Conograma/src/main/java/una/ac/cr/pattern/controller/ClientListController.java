@@ -5,17 +5,13 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import una.ac.cr.pattern.Constants;
 import una.ac.cr.pattern.services.ClientService;
 
-import javax.swing.*;
+import javax.swing.JTextField;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-/**
- * Client Controller
- *
- * @author mguzmana
- */
 public class ClientListController implements ActionListener {
 
     private JTextField searchTermTextField = new JTextField(26);

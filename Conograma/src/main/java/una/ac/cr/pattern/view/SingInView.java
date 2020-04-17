@@ -1,25 +1,30 @@
 package una.ac.cr.pattern.view;
 
-import una.ac.cr.pattern.controller.LoginController;
+import una.ac.cr.pattern.controller.SingInController;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import java.awt.Color;
 
 /**
  * Descripcion: Clase encargada de hacer el loggeo y la autentificacion
  * del doctor.
  */
 
-public class LoginView extends JInternalFrame {
+public class SingInView extends JInternalFrame {
 
     private JPanel panel;
     private JLabel lblUser, lblPassword, lblLogIn;
     private JTextField txtUser;
     private JPasswordField password;
     private JButton btnAccept, btnClean;
-    private LoginController controller;
+    private SingInController controller;
 
-    public LoginView() {
+    public SingInView() {
         this.setClosable(true); // Para cerrar
         this.setIconifiable(true); // Para minimizar
         this.setResizable(false);
@@ -42,7 +47,7 @@ public class LoginView extends JInternalFrame {
         btnAccept.setName("btnAccept");
         btnClean.setName("btnClean");
 
-        controller = new LoginController(txtUser, password, btnAccept, btnClean);
+        controller = new SingInController(txtUser, password, btnAccept, btnClean);
         btnAccept.addActionListener(controller);
         btnClean.addActionListener(controller);
 

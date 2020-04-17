@@ -1,37 +1,41 @@
 package una.ac.cr.pattern.controller;
 
+import una.ac.cr.pattern.view.ClientListView;
 import una.ac.cr.pattern.view.ClientsView;
-import una.ac.cr.pattern.view.LoginView;
+import una.ac.cr.pattern.view.MedicalClinicView;
+import una.ac.cr.pattern.view.SingInView;
 
-import javax.swing.*;
+import javax.swing.JMenuItem;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MedicalClinicController implements ActionListener {
-    private JDesktopPane desktop;
-    private JMenuItem logIn, singIn;
-    static final String PATIENT = "PAT";
 
-    public MedicalClinicController(JDesktopPane desktop, JMenuItem logIn, JMenuItem singIn) {
-        this.desktop = desktop;
+    private JMenuItem logIn, singIn;
+    private ClientsView clientsView;
+    private SingInView singInView;
+    private ClientListView clientListView;
+
+    public MedicalClinicController(JMenuItem logIn, JMenuItem singIn) {
+        try {
+            clientsView = new ClientsView();
+            singInView = new SingInView();
+            clientListView = new ClientListView();
+        } catch (Exception e) {
+        }
         this.logIn = logIn;
         this.singIn = singIn;
     }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        System.out.println("Hola");
-
         Object source = actionEvent.getSource();
         if (source == logIn) {
-            ClientsView clientsView = new ClientsView();
-            desktop.add(clientsView);
+            MedicalClinicView.desktop.add(clientsView);
             clientsView.setVisible(true);
         } else if (source == singIn) {
-            LoginView loginView = new LoginView();
-            desktop.add(loginView);
-            loginView.setVisible(true);
+            MedicalClinicView.desktop.add(singInView);
+            singInView.setVisible(true);
         }
-
     }
 }

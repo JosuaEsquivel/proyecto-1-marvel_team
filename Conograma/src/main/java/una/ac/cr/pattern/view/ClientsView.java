@@ -2,8 +2,14 @@ package una.ac.cr.pattern.view;
 
 import una.ac.cr.pattern.controller.ClientController;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.JButton;
+import java.awt.Color;
 
 /**
  * Descripcion: Clase que agrega y almacena en Json la informacion general

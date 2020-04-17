@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2016 mguzmana
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- * Universidad Nacional de Costa Rica, Prof: Maikol Guzman Alan.
- */
 package una.ac.cr.pattern.services;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
@@ -31,14 +13,6 @@ import java.io.IOException;
 public class ClientService {
 
     /**
-     * Empty Constructor
-     */
-
-
-    /**
-     * Wrapper to return the list of students from the File
-     *
-     * @return Object[][] data
      * @throws JsonGenerationException
      * @throws JsonMappingException
      * @throws IOException
@@ -66,10 +40,7 @@ public class ClientService {
         return data;
     }
 
-    private Client[] loadStudentsFromFile() throws JsonGenerationException,
-            JsonMappingException, IOException {
-        // Library Jackson parse JSon
-        // http://wiki.fasterxml.com/JacksonHome
+    private Client[] loadStudentsFromFile() throws IOException {
         Client[] clients = null;
 
         ObjectMapper mapper = new ObjectMapper();
